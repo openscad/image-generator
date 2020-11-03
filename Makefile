@@ -10,14 +10,16 @@ bosl_pngs := $(patsubst %.scad,%.png,$(wildcard BOSL/*.scad))
 bolts_pngs := $(patsubst %.scad,%.png,$(wildcard BOLTS/*.scad))
 dotscad_pngs := $(patsubst %.scad,%.png,$(wildcard dotSCAD/*.scad))
 marksencl_pngs := $(patsubst %.scad,%.png,$(wildcard MarksEnclosureHelper/*.scad))
-all_pngs := $(bosl_pngs) $(bolts_pngs) $(dotscad_pngs) $(marksencl_pngs)
+roundanything_pngs := $(patsubst %.scad,%.png,$(wildcard RoundAnything/*.scad))
+all_pngs := $(bosl_pngs) $(bolts_pngs) $(dotscad_pngs) $(marksencl_pngs) $(roundanything_pngs)
 
-all : bosl.gif bolts.gif dotscad.gif marks-enclosure-helper.gif
+all : bosl.gif bolts.gif dotscad.gif marks-enclosure-helper.gif round-anything.gif
 
 bosl.gif : $(bosl_pngs)
 bolts.gif : $(bolts_pngs)
 dotscad.gif : $(dotscad_pngs)
 marks-enclosure-helper.gif : $(marksencl_pngs)
+round-anything.gif : $(roundanything_pngs)
 
 .INTERMEDIATE: $(all_pngs)
 
