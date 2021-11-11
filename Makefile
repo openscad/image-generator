@@ -15,6 +15,7 @@ rcolyer_smooth_prim_pngs :=  $(patsubst %.scad,%.png,$(wildcard rcolyer-smooth-p
 rcolyer_closepoints_pngs := $(patsubst %.scad,%.png,$(wildcard rcolyer-closepoints/*.scad))
 rcolyer_plot_function_pngs := $(patsubst %.scad,%.png,$(wildcard rcolyer-plot-function/*.scad))
 rcolyer_threads_pngs := $(patsubst %.scad,%.png,$(wildcard rcolyer-threads/*.scad))
+ub_pngs := $(patsubst %.scad,%.png,$(wildcard UB/*.scad))
 
 all_pngs := \
 	$(bosl_pngs) \
@@ -25,7 +26,8 @@ all_pngs := \
 	$(rcolyer_smooth_prim_pngs) \
 	$(rcolyer_closepoints_pngs) \
 	$(rcolyer_plot_function_pngs) \
-	$(rcolyer_threads_pngs)
+	$(rcolyer_threads_pngs) \
+	$(ub_pngs)
 
 all : \
 	bosl.gif \
@@ -36,7 +38,8 @@ all : \
 	rcolyer_smooth_prim.gif \
 	rcolyer_closepoints.gif \
 	rcolyer_plot_function.gif \
-	rcolyer_threads.gif
+	rcolyer_threads.gif ß
+	ub.gif
 
 bosl.gif : $(bosl_pngs)
 bolts.gif : $(bolts_pngs)
@@ -47,6 +50,7 @@ rcolyer_smooth_prim.gif : $(rcolyer_smooth_prim_pngs)
 rcolyer_closepoints.gif : $(rcolyer_closepoints_pngs)
 rcolyer_plot_function.gif : $(rcolyer_plot_function_pngs)
 rcolyer_threads.gif : $(rcolyer_threads_pngs)
+ub.gif : $(ub_pngs)
 
 .INTERMEDIATE: $(all_pngs)
 
