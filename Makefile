@@ -16,6 +16,9 @@ rcolyer_closepoints_pngs := $(patsubst %.scad,%.png,$(wildcard rcolyer-closepoin
 rcolyer_plot_function_pngs := $(patsubst %.scad,%.png,$(wildcard rcolyer-plot-function/*.scad))
 rcolyer_threads_pngs := $(patsubst %.scad,%.png,$(wildcard rcolyer-threads/*.scad))
 ub_pngs := $(patsubst %.scad,%.png,$(wildcard UB/*.scad))
+funcutils_pngs := $(patsubst %.scad,%.png,$(wildcard funcutils/*.scad))
+sofian_tray_pngs := $(patsubst %.scad,%.png,$(wildcard sofian_tray/*.scad))
+yapp_pngs := $(patsubst %.scad,%.png,$(wildcard YAPP/*.scad))
 
 all_pngs := \
 	$(bosl_pngs) \
@@ -27,7 +30,10 @@ all_pngs := \
 	$(rcolyer_closepoints_pngs) \
 	$(rcolyer_plot_function_pngs) \
 	$(rcolyer_threads_pngs) \
-	$(ub_pngs)
+	$(ub_pngs) \
+	$(funcutils_pngs) \
+	$(sofian_tray_pngs) \
+	$(yapp_pngs)
 
 all : \
 	bosl.gif \
@@ -38,8 +44,11 @@ all : \
 	rcolyer_smooth_prim.gif \
 	rcolyer_closepoints.gif \
 	rcolyer_plot_function.gif \
-	rcolyer_threads.gif ß
-	ub.gif
+	rcolyer_threads.gif \
+	ub.gif \
+	funcutils.gif \
+	sofian_tray.gif \
+	yapp.gif
 
 bosl.gif : $(bosl_pngs)
 bolts.gif : $(bolts_pngs)
@@ -51,6 +60,9 @@ rcolyer_closepoints.gif : $(rcolyer_closepoints_pngs)
 rcolyer_plot_function.gif : $(rcolyer_plot_function_pngs)
 rcolyer_threads.gif : $(rcolyer_threads_pngs)
 ub.gif : $(ub_pngs)
+funcutils.gif : $(funcutils_pngs)
+sofian_tray.gif : $(sofian_tray_pngs)
+yapp.gif : $(yapp_pngs)
 
 .INTERMEDIATE: $(all_pngs)
 
@@ -62,7 +74,7 @@ _%.png : %.scad Makefile
 	openscad-nightly $(OPTS) -o $@ $<
 
 %.png : _%.png
-	convert $< -background gray80 -font Open-Sans -gravity South -pointsize 28 -splice 0x40 -annotate +0+2 "$(subst /,: ,$(patsubst %.png,%,$@))" -gravity Center -append $@
+	convert $< -background gray80 -font Open-Sans -gravity South -pointsize 28 -splice 0x40 -annotate +0+2 "$$(echo $(subst /,: ,$(patsubst %.png,%,$@)) | sed -e 's/[0-9][0-9]_//')" -gravity Center -append $@
 
 clean:
 	rm -rf output */*.png
