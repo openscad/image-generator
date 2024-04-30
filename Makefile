@@ -2,7 +2,7 @@ DELAY=1000
 MORPHDELAY=8
 MORPHFRAMES=19
 
-OPTS=--view axes,scales --imgsize 600,360
+OPTS=--enable all --view axes,scales --imgsize 600,360
 
 OUTDIR=output
 

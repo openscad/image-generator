@@ -1,4 +1,4 @@
-include <YAPP/library/YAPPgenerator_v11.scad>
+include <YAPP/library/YAPPgenerator_v12.scad>
 pcbLength    = 68.5; 
 pcbWidth     = 53.3; 
 pcbThickness = 1.5;                              

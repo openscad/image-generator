@@ -1,4 +1,4 @@
-include <YAPP/library/YAPPgenerator_v11.scad>
+include <YAPP/library/YAPPgenerator_v12.scad>
 
  wallThickness        = 1.5;
  basePlaneThickness   = 1.0;
