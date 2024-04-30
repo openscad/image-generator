@@ -23,6 +23,7 @@ yapp_pngs := $(patsubst %.scad,%.png,$(wildcard YAPP/*.scad))
 stemfie_pngs := $(patsubst %.scad,%.png,$(wildcard Stemfie/*.scad))
 functional_openscad_pngs := $(patsubst %.scad,%.png,$(wildcard FunctionalOpenSCAD/*.scad))
 catchnhole_pngs := $(patsubst %.scad,%.png,$(wildcard catchnhole/*.scad))
+angelo_nicoli_assets_pngs := $(patsubst %.scad,%.png,$(wildcard angelo-nicoli-assets/*.scad))
 
 all_pngs := \
 	$(bosl_pngs) \
@@ -42,6 +43,7 @@ all_pngs := \
 	$(stemfie_pngs) \
 	$(functional_openscad_pngs) \
 	$(catchnhole_pngs) \
+	$(angelo_nicoli_assets_pngs) \
 
 all : \
 	bosl.gif \
@@ -61,6 +63,7 @@ all : \
 	stemfie.gif \
 	functional_openscad.gif \
 	catchnhole.gif \
+	angelo-nicoli-assets.gif \
 
 bosl.gif : $(bosl_pngs)
 bosl2.gif : $(bosl2_pngs)
@@ -79,6 +82,7 @@ yapp.gif : $(yapp_pngs)
 stemfie.gif : $(stemfie_pngs)
 functional_openscad.gif : $(functional_openscad_pngs)
 catchnhole.gif : $(catchnhole_pngs)
+angelo-nicoli-assets.gif : $(angelo_nicoli_assets_pngs)
 
 .INTERMEDIATE: $(all_pngs)
 
