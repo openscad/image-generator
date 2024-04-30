@@ -22,6 +22,7 @@ sofian_tray_pngs := $(patsubst %.scad,%.png,$(wildcard sofian_tray/*.scad))
 yapp_pngs := $(patsubst %.scad,%.png,$(wildcard YAPP/*.scad))
 stemfie_pngs := $(patsubst %.scad,%.png,$(wildcard Stemfie/*.scad))
 functional_openscad_pngs := $(patsubst %.scad,%.png,$(wildcard FunctionalOpenSCAD/*.scad))
+catchnhole_pngs := $(patsubst %.scad,%.png,$(wildcard catchnhole/*.scad))
 
 all_pngs := \
 	$(bosl_pngs) \
@@ -40,6 +41,7 @@ all_pngs := \
 	$(yapp_pngs) \
 	$(stemfie_pngs) \
 	$(functional_openscad_pngs) \
+	$(catchnhole_pngs) \
 
 all : \
 	bosl.gif \
@@ -57,7 +59,8 @@ all : \
 	sofian_tray.gif \
 	yapp.gif \
 	stemfie.gif \
-	functional_openscad.gif
+	functional_openscad.gif \
+	catchnhole.gif \
 
 bosl.gif : $(bosl_pngs)
 bosl2.gif : $(bosl2_pngs)
@@ -75,6 +78,7 @@ sofian_tray.gif : $(sofian_tray_pngs)
 yapp.gif : $(yapp_pngs)
 stemfie.gif : $(stemfie_pngs)
 functional_openscad.gif : $(functional_openscad_pngs)
+catchnhole.gif : $(catchnhole_pngs)
 
 .INTERMEDIATE: $(all_pngs)
 
