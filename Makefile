@@ -2,7 +2,7 @@ DELAY=1000
 MORPHDELAY=8
 MORPHFRAMES=19
 
-OPTS=--enable all --view axes,scales --imgsize 600,360
+OPTS=--backend=manifold --enable all --view axes,scales --imgsize 600,360
 
 OUTDIR=output
 
@@ -24,6 +24,7 @@ stemfie_pngs := $(patsubst %.scad,%.png,$(wildcard Stemfie/*.scad))
 functional_openscad_pngs := $(patsubst %.scad,%.png,$(wildcard FunctionalOpenSCAD/*.scad))
 catchnhole_pngs := $(patsubst %.scad,%.png,$(wildcard catchnhole/*.scad))
 angelo_nicoli_assets_pngs := $(patsubst %.scad,%.png,$(wildcard angelo-nicoli-assets/*.scad))
+stone_age_lib_pngs := $(patsubst %.scad,%.png,$(wildcard StoneAgeLib/*.scad))
 
 all_pngs := \
 	$(bosl_pngs) \
@@ -44,6 +45,7 @@ all_pngs := \
 	$(functional_openscad_pngs) \
 	$(catchnhole_pngs) \
 	$(angelo_nicoli_assets_pngs) \
+	$(stone_age_lib_pngs) \
 
 all : \
 	bosl.gif \
@@ -64,6 +66,7 @@ all : \
 	functional_openscad.gif \
 	catchnhole.gif \
 	angelo-nicoli-assets.gif \
+	stone-age-lib.gif \
 
 bosl.gif : $(bosl_pngs)
 bosl2.gif : $(bosl2_pngs)
@@ -83,6 +86,7 @@ stemfie.gif : $(stemfie_pngs)
 functional_openscad.gif : $(functional_openscad_pngs)
 catchnhole.gif : $(catchnhole_pngs)
 angelo-nicoli-assets.gif : $(angelo_nicoli_assets_pngs)
+stone-age-lib.gif : $(stone_age_lib_pngs)
 
 .INTERMEDIATE: $(all_pngs)
 
