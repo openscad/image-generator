@@ -25,6 +25,7 @@ functional_openscad_pngs := $(patsubst %.scad,%.png,$(wildcard FunctionalOpenSCA
 catchnhole_pngs := $(patsubst %.scad,%.png,$(wildcard catchnhole/*.scad))
 angelo_nicoli_assets_pngs := $(patsubst %.scad,%.png,$(wildcard angelo-nicoli-assets/*.scad))
 stone_age_lib_pngs := $(patsubst %.scad,%.png,$(wildcard StoneAgeLib/*.scad))
+scon_pngs := $(patsubst %.scad,%.png,$(wildcard scon/*.scad))
 
 all_pngs := \
 	$(bosl_pngs) \
@@ -46,6 +47,7 @@ all_pngs := \
 	$(catchnhole_pngs) \
 	$(angelo_nicoli_assets_pngs) \
 	$(stone_age_lib_pngs) \
+	$(scon_pngs) \
 
 all : \
 	bosl.gif \
@@ -67,6 +69,7 @@ all : \
 	catchnhole.gif \
 	angelo-nicoli-assets.gif \
 	stone-age-lib.gif \
+	scon.gif \
 
 bosl.gif : $(bosl_pngs)
 bosl2.gif : $(bosl2_pngs)
@@ -87,6 +90,7 @@ functional_openscad.gif : $(functional_openscad_pngs)
 catchnhole.gif : $(catchnhole_pngs)
 angelo-nicoli-assets.gif : $(angelo_nicoli_assets_pngs)
 stone-age-lib.gif : $(stone_age_lib_pngs)
+scon.gif : $(scon_pngs)
 
 .INTERMEDIATE: $(all_pngs)
 
